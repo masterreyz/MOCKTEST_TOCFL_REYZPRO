@@ -1,0 +1,115 @@
+TOCFL STUDIO BETA — PANDUAN PENGGUNAAN
+======================================
+
+1. ISI FOLDER
+-------------
+index.html       halaman website
+app.js           logika navigasi, sesi, penilaian, audio, dan progres
+styles.css       tampilan responsif
+panduan.txt     panduan ini
+data/           data/reading.json dan data/listening.json
+audio/          tempat file audio latihan Anda
+templates/      template JSON kosong untuk menambah soal
+
+2. MENJALANKAN WEBSITE
+----------------------
+Browser biasanya memblokir fetch() dari file://. Jalankan server lokal dari folder utama project:
+
+  python -m http.server 8000
+
+Buka:
+
+  http://localhost:8000
+
+Alternatif jika Node.js tersedia:
+
+  npx serve .
+
+Jangan membuka index.html dengan klik dua kali jika bank JSON tidak terbaca.
+
+3. STRUKTUR JSON
+----------------
+Setiap bank wajib memakai bentuk:
+
+{
+  "schemaVersion": 1,
+  "skill": "reading" atau "listening",
+  "questions": [ ... ]
+}
+
+Field wajib setiap soal:
+- id          unik dalam satu bank; hanya huruf, angka, _ dan -
+- level       A1, A2, B1, B2, C1, atau C2
+- title       judul pendek untuk kartu bank soal
+- prompt      pertanyaan
+- options     2 sampai 6 objek dengan id A–F dan text
+- answer      id opsi benar, misalnya "B"
+- explanation pembahasan setelah submit
+
+Field yang dianjurkan:
+- topic       kategori soal
+- passage     teks bacaan (wajib secara praktik untuk Reading)
+- tags        array kata kunci
+- isDemo      true untuk soal contoh; boleh dihapus untuk soal asli
+
+Tambahan wajib untuk Listening:
+- audio       path relatif, misalnya "audio/lesson-01.mp3"
+- transcript  teks audio; disimpan untuk review setelah sesi
+
+Contoh lengkap tersedia di:
+- templates/reading-template.json
+- templates/listening-template.json
+
+4. MENAMBAHKAN SOAL
+-------------------
+Cara manual:
+1) Salin template JSON.
+2) Isi soal dan pastikan id tidak duplikat.
+3) Ganti data/reading.json atau data/listening.json.
+4) Untuk listening, taruh audio di folder audio/ dan samakan nama path pada field "audio".
+5) Muat ulang browser.
+
+Cara lewat website:
+1) Buka menu “Bank soal & audio”.
+2) Pilih satu atau dua file JSON. Skill di dalam file harus sesuai.
+3) Pilih file audio bila ingin menguji listening tanpa menyalin file ke folder audio.
+   Audio impor berlaku selama tab browser terbuka dan tidak diubah menjadi file project.
+4) Gunakan “Ekspor Reading/Listening” untuk mengunduh bank aktif.
+5) Tombol “Gunakan JSON bawaan” menghapus bank impor dari browser dan kembali ke file data/.
+
+5. FITUR BETA
+-------------
+- Dashboard Reading, Listening, Progress, Quick guide, dan Bank soal & audio.
+- Filter level, pencarian topik, sesi campuran, jumlah soal, dan acak urutan.
+- Mode timed opsional; tanpa timed, timer menghitung waktu aktif.
+- Jeda menyembunyikan soal dan menghentikan timer serta audio.
+- Jump navigation untuk berpindah langsung ke nomor soal.
+- Kunci jawaban dan pembahasan baru tampil setelah sesi dikirim.
+- Ulangi soal yang salah/kosong dari halaman hasil.
+- Progress tersimpan di localStorage browser ini.
+- Ekspor riwayat progres sebagai JSON.
+- Layout responsif untuk desktop dan mobile.
+
+6. CATATAN TEKNIS DAN BATASAN
+-----------------------------
+- Contoh soal adalah konten demonstrasi, bukan soal resmi TOCFL.
+- Nilai adalah persentase jawaban benar dan bukan konversi skor resmi TOCFL.
+- File audio asli tidak disertakan dalam paket beta.
+- Kunci jawaban berada di JSON client-side. Jangan memakai struktur ini untuk ujian berisiko tinggi atau konten yang harus dirahasiakan.
+- Bank yang diimpor lewat UI disimpan di localStorage browser. Untuk distribusi project, edit file JSON di data/.
+- Data progres dan bank impor hanya ada pada browser/perangkat tempat Anda memakainya.
+- Audio path harus relatif dan aman, tanpa URL luar atau “..”.
+
+7. CHECKLIST SEBELUM MEMASUKKAN SOAL ASLI
+------------------------------------------
+[ ] Semua id unik.
+[ ] Setiap soal memiliki tepat satu answer yang cocok dengan id opsi.
+[ ] Level memakai A1–C2.
+[ ] Pembahasan menjelaskan bukti jawaban.
+[ ] Semua audio dapat diputar di browser.
+[ ] Transkrip listening sudah diperiksa.
+[ ] Gunakan server lokal saat menguji.
+
+8. STRUKTUR PENAMBAHAN LANJUTAN
+--------------------------------
+Jika nanti Anda ingin login, leaderboard, bank soal terproteksi, sinkronisasi multi-perangkat, analitik per kompetensi, atau upload audio ke server, frontend statis ini perlu dihubungkan ke backend. Jangan menyimpan kunci jawaban rahasia di browser untuk ujian resmi.

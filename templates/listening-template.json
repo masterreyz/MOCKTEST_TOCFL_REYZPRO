@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "skill": "listening",
+  "questions": [
+    {
+      "id": "l-a1-003",
+      "level": "A1",
+      "title": "Judul singkat soal",
+      "topic": "Topik",
+      "audio": "audio/lesson-01.mp3",
+      "transcript": "Transkrip untuk pembahasan internal. Tidak ditampilkan sebelum sesi dikirim.",
+      "prompt": "Pertanyaan dalam Bahasa Mandarin?",
+      "options": [
+        { "id": "A", "text": "Opsi A" },
+        { "id": "B", "text": "Opsi B" },
+        { "id": "C", "text": "Opsi C" },
+        { "id": "D", "text": "Opsi D" }
+      ],
+      "answer": "A",
+      "explanation": "Jelaskan petunjuk dari audio yang mendukung jawaban.",
+      "tags": ["detail", "waktu"]
+    }
+  ]
+}
