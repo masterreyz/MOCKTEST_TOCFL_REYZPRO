@@ -1,0 +1,145 @@
+TOCFL STUDIO 2.0 | READING BAND A
+================================
+
+MULAI CEPAT
+1. Ekstrak SELURUH isi ZIP ke satu folder. Jangan membuka HTML dari dalam ZIP.
+2. Buka index.html di Chrome, Edge, Firefox, atau Safari versi modern.
+3. Pilih menu Mock Test Band A, lalu klik Kerjakan 50 soal.
+4. Atur timer, jawab pertanyaan, lalu Kirim sesi untuk melihat kunci dan hasil.
+
+Paket ini menyertakan data offline. Koneksi internet dan instalasi paket tidak
+wajib untuk memakai materi bawaan. JavaScript harus aktif. Jika browser membatasi
+file lokal atau penyimpanan progres, gunakan server lokal pada bagian berikut.
+
+MENJALANKAN LEWAT SERVER LOKAL
+Buka terminal di folder yang memuat index.html, lalu jalankan:
+  python -m http.server 8000
+Pada sistem yang memakai nama python3:
+  python3 -m http.server 8000
+Buka http://localhost:8000
+Server membaca bank JSON secara langsung. Hentikan server dengan Ctrl+C.
+
+ISI PAKET
+index.html                  Halaman aplikasi, nama sudah dinormalisasi.
+styles.css                  Desain asli yang diperluas untuk paket dan soal.
+app.js                      Logika aplikasi lengkap, tanpa framework.
+data/reading.json           Seluruh 250 soal reading beserta kunci.
+data/listening.json         Bank listening kosong, siap diisi.
+data/exams.json             Metadata lima mock test dan pembagian bagian.
+data/banks.js               Salinan data untuk pembukaan langsung/offline.
+data/import-report.json     Hasil pemeriksaan impor materi PDF.
+assets/reading/             230 gambar WebP yang diambil dari PDF asli.
+sources/                    Lima PDF soal dan lima PDF kunci asli.
+audio/                      Folder rekaman listening Anda.
+templates/                  Contoh format JSON untuk menambah materi.
+scripts/bundle-data.mjs      Pembaruan data offline dari JSON.
+scripts/check.mjs            Pemeriksaan struktur dan logika aplikasi.
+panduan.txt                 Panduan ini.
+README.md                   Ringkasan penggunaan dan batasan.
+
+MATERI READING
+Paket 1: 50 soal. Bagian 1: 1-15; 2: 16-30; 3: 31-40; 4: 41-45; 5: 46-50.
+Paket 2: 50 soal. Susunan sama seperti paket 1.
+Paket 3: 50 soal. Bagian 1: 1-15; 2: 16-30; 3: 31-35; 4: 36-45; 5: 46-50.
+Paket 4: 50 soal. Susunan sama seperti paket 3.
+Paket 5: 50 soal. Susunan sama seperti paket 1.
+Total: 250 soal, semuanya berlabel Band A. Sumber tidak membagi tiap nomor
+menjadi A1 atau A2, sehingga aplikasi tidak menetapkan level per soal sendiri.
+
+Bagian 1: pemahaman kalimat, pilihan gambar A-C.
+Bagian 2: deskripsi gambar, pilihan kalimat A-C.
+Bagian 3: melengkapi kalimat dari konteks gambar, pilihan A-C.
+Bagian 4: melengkapi paragraf, pilihan A-F. Satu pilihan hanya boleh digunakan
+sekali dalam satu kelompok lima nomor. Untuk memindahkan pilihan, buka nomor
+yang sudah memakai pilihan tersebut dan klik Hapus pilihan terlebih dahulu.
+Bagian 5: pemahaman bacaan, pilihan A-D.
+
+Gambar asli tampil langsung pada bagian 1 dan 2. Bagian 3 menampilkan gambar
+bersama untuk lima soal. Cuplikan asli tersedia juga pada bagian 3-5 melalui
+Lihat cuplikan PDF asli. Klik gambar untuk membuka ukuran penuh. Teks bacaan
+dan pilihan tetap tersedia sebagai teks yang bisa dipilih/disalin.
+
+CARA LATIHAN
+- Paket lengkap: semua 50 soal, urutan sesuai PDF. Tidak diacak.
+- Latihan per bagian: buka Latihan per bagian pada kartu paket.
+- Reading Lab: filter paket, bagian, atau cari teks. Kerjakan satu soal dari kartu.
+- Reading dari dashboard: sesi khusus dengan jumlah soal/acak sesuai pengaturan.
+- Timer awal paket: 60 menit, dapat diubah atau dimatikan. Ini pengaturan latihan.
+- Jeda: menyembunyikan soal, menghentikan waktu aktif dan audio.
+- Tandai: memberi tanda kuning pada nomor untuk diperiksa lagi dalam sesi.
+- Hapus pilihan: membatalkan jawaban pada nomor aktif.
+- Waktu habis: aplikasi mengirim sesi otomatis.
+- Kirim sesi: nomor kosong dihitung salah. Hasil menampilkan jumlah benar,
+  persentase, hasil per bagian, kunci tiap soal, dan tautan PDF kunci.
+- Ulangi soal salah/kosong: membuka sesi baru untuk nomor yang perlu dilatih.
+
+KUNCI DAN HASIL
+Kunci mengikuti lima PDF jawaban yang Anda unggah. Sumber tidak memuat
+pembahasan rinci. Aplikasi menjelaskan rujukan kunci, tanpa mengarang pembahasan
+seolah-olah berasal dari PDF. Skor berupa persentase jawaban benar, bukan
+konversi skor resmi TOCFL atau prediksi lulus.
+
+PROGRES
+Progres tersimpan di localStorage browser/perangkat ini. Kunci penyimpanan versi
+sebelumnya tetap dipakai agar riwayat yang kompatibel dapat dibaca. Hasil paket
+terbaik dihitung dari maksimal 100 sesi terakhir yang tersimpan.
+Sesi yang belum dikirim tidak tersimpan bila tab ditutup atau dimuat ulang.
+Audio yang diimpor berlaku sampai halaman dimuat ulang atau tab ditutup.
+Ekspor riwayat sebagai JSON dari halaman Progress untuk menyimpan salinan.
+Mode privat/pembatasan browser dapat mencegah penyimpanan. Pindah folder atau
+alamat server dapat memakai ruang penyimpanan yang berbeda.
+Jika bank impor lama menutupi 250 soal bawaan, buka Bank soal & audio lalu pilih
+Gunakan JSON bawaan. Ekspor dulu bank impor yang masih diperlukan.
+
+MENAMBAHKAN ATAU MENGEDIT SOAL
+Setiap bank memakai format:
+  {"schemaVersion":1,"skill":"reading","questions":[...]}
+Untuk listening, gunakan skill "listening".
+Field wajib: id, level, title, prompt, options, answer, explanation.
+Level: Band A, A1, A2, B1, B2, C1, C2.
+ID unik: huruf Latin, angka, garis bawah, tanda hubung; maksimal 80 karakter.
+Opsi: 2-6 objek {"id":"A","text":"..."}, ID A-F unik.
+answer harus sama dengan satu ID opsi.
+Reading menggunakan passage untuk bacaan. images menyimpan daftar gambar:
+  [{"src":"assets/reading/contoh.webp","alt":"Keterangan gambar","kind":"question"}]
+Gunakan kind "stimulus" untuk gambar bersama.
+Listening menggunakan audio (contoh "audio/l01.mp3") dan transcript.
+Path gambar/audio harus lokal relatif; URL luar dan ".." tidak diterima.
+
+Field paket tambahan: examId, examTitle, questionNumber, section,
+sectionTitle, sectionTitleZh, instruction, groupId, groupQuestionNumbers,
+uniqueOptions, source {file,page,answerFile}. Lihat data/reading.json untuk
+contoh lengkap. Katalog di antarmuka dibentuk dari soal aktif dengan examId.
+Tombol paket lengkap memerlukan tepat 50 nomor unik berurutan 1-50.
+
+Pilihan A: edit data/reading.json atau data/listening.json, lalu gunakan server
+lokal. Muat ulang browser. Jika ada bank impor, pilih Gunakan JSON bawaan.
+Pilihan B: agar hasil edit juga berlaku saat membuka index.html langsung, jalankan:
+  node scripts/bundle-data.mjs
+Setelah itu muat ulang halaman. Node.js hanya diperlukan untuk skrip ini,
+bukan untuk memakai website. Jangan mengedit banks.js secara manual.
+Pilihan C: impor JSON melalui Bank soal & audio. Impor mengganti bank dengan
+skill yang sama, tidak menggabungkannya. Untuk menambah soal, gabungkan isi
+questions terlebih dahulu. Ekspor bank aktif untuk menyimpan hasilnya.
+
+Impor maksimal 2 bank dengan skill berbeda, maksimal 8 MB per file, 1.000 soal
+per bank. Gambar dari bank impor harus sudah ada di folder proyek sesuai path.
+Impor audio mendukung MP3/WAV/M4A/OGG/WebM, maksimal 80 MB per file. Nama file
+harus cocok dengan nama pada field audio. Untuk distribusi, letakkan rekaman
+secara permanen di folder audio dan gunakan path relatif pada JSON.
+
+PENGUJIAN PENGEMBANGAN
+Jika Node.js tersedia:
+  node scripts/check.mjs
+Pemeriksaan mencakup 250 kunci, struktur bagian, aset, kompatibilitas bank,
+penilaian, timer, aturan opsi paragraf, hasil, dan pemuatan data offline/HTTP.
+Ini pemeriksaan programatik, bukan pengujian tampilan di browser.
+Buka index.html untuk memeriksa tampilan pada perangkat Anda.
+
+BATASAN
+- Materi listening belum diberikan. Menu dan mekanismenya tersedia; bank awal kosong.
+- Paket tidak menggunakan backend, akun, atau sinkronisasi antarperangkat.
+- Jawaban berada dalam kode/data browser karena aplikasi ini untuk latihan mandiri.
+- PDF asli disertakan sebagai sumber materi, termasuk halaman petunjuk dan contoh.
+- Cuplikan soal mempertahankan gambar sumber. Teks Mandarin menggunakan font
+  sistem; tampilan font dapat berbeda antarperangkat.

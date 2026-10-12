@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08192f" />
+    <meta
+      name="description"
+      content="Latihan TOCFL Reading Band A: lima mock test, 250 soal bergambar, kunci jawaban, dan progres belajar."
+    />
+    <title>TOCFL Studio | 5 Mock Test Reading Band A</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navigasi utama">
+        <a class="brand" href="#dashboard" aria-label="TOCFL Studio beranda">
+          <span class="brand-mark">TO</span>
+          <span>
+            <strong>TOCFL<span class="brand-accent"> Studio</span></strong>
+            <small>Mandarin practice lab</small>
+          </span>
+        </a>
+
+        <nav class="side-nav">
+          <p class="nav-label">Workspace</p>
+          <a href="#dashboard" class="nav-link active" data-route="dashboard">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+          </a>
+          <a href="#mocks" class="nav-link" data-route="mocks"><span class="nav-icon">▤</span><span>Mock Test Band A</span><span class="nav-count">5</span></a>
+          <a href="#reading" class="nav-link" data-route="reading">
+            <span class="nav-icon">文</span>
+            <span>Reading</span>
+            <span class="nav-count" id="reading-nav-count">0</span>
+          </a>
+          <a href="#listening" class="nav-link" data-route="listening">
+            <span class="nav-icon">◖</span>
+            <span>Listening</span>
+            <span class="nav-count" id="listening-nav-count">0</span>
+          </a>
+          <a href="#progress" class="nav-link" data-route="progress">
+            <span class="nav-icon">↗</span>
+            <span>Progress</span>
+          </a>
+
+          <p class="nav-label nav-label-spaced">Resources</p>
+          <a href="#bank" class="nav-link" data-route="bank"><span class="nav-icon">+</span><span>Bank soal &amp; audio</span></a>
+          <a href="#guide" class="nav-link" data-route="guide">
+            <span class="nav-icon">?</span>
+            <span>Quick guide</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="target-card">
+            <div class="target-card-topline">
+              <span>Target level</span>
+              <button class="text-button" id="open-settings" type="button">Edit</button>
+            </div>
+            <strong id="target-level-label">TOCFL Band A</strong>
+            <div class="target-progress"><span id="target-progress-bar"></span></div>
+            <small><span id="target-completed">0</span> of <span id="target-total">0</span> questions</small>
+          </div>
+          <p class="sidebar-note">Progres tersimpan di browser ini</p>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" type="button" aria-label="Buka menu">☰</button>
+          <div class="breadcrumb" id="breadcrumb">Workspace <span>/</span> Dashboard</div>
+          <div class="topbar-actions">
+            <span class="status-dot"><i></i> Local practice mode</span>
+            <button class="icon-button" id="reset-progress" type="button" title="Reset progres" aria-label="Reset progres">↺</button>
+            <div class="avatar" aria-label="Profil pengguna">R</div>
+          </div>
+        </header>
+
+        <div id="data-status" class="data-status" role="status">Memuat bank soal…</div>
+
+        <section class="page-view active" id="view-dashboard" data-view="dashboard">
+          <div class="hero-section">
+            <div>
+              <p class="eyebrow">TOCFL Reading · Band A</p>
+              <h1>Lima paket soal.<br /><em>Satu langkah maju.</em></h1>
+              <p class="hero-copy">Kerjakan 250 soal dari lima mock test Anda. Pilih satu paket lengkap atau fokus pada satu bagian, lalu periksa hasil dan kunci jawabannya.</p>
+              <div class="hero-actions">
+                <a class="primary-button" href="#mocks">Pilih mock test <span>→</span></a>
+                <a class="quiet-link" href="#guide">Lihat cara kerja <span>↗</span></a>
+              </div>
+            </div>
+            <div class="hero-orbit" aria-hidden="true">
+              <div class="orbit-ring ring-one"></div>
+              <div class="orbit-ring ring-two"></div>
+              <div class="orbit-core"><span>你好</span><small>KEEP GOING</small></div>
+              <span class="orbit-chip chip-one">閱讀</span>
+              <span class="orbit-chip chip-two">聽力</span>
+              <span class="orbit-chip chip-three">練習</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid" id="dashboard-metrics"></div>
+
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Choose your focus</p>
+              <h2>Mulai dari kemampuan yang ingin diasah</h2>
+            </div>
+            <a class="quiet-link" href="#progress">Lihat progres <span>↗</span></a>
+          </div>
+          <div class="mode-grid">
+            <article class="mode-card reading-card">
+              <div class="mode-card-header"><span class="mode-tag">01 · READING</span><span class="mode-symbol">文</span></div>
+              <h3>閱讀<br /><span>Reading</span></h3>
+              <p>Lima bagian latihan dari kalimat bergambar hingga pemahaman bacaan.</p>
+              <div class="mode-card-footer"><span><strong id="reading-card-count">0</strong> questions</span><button type="button" data-start="reading">Start <span>→</span></button></div>
+            </article>
+            <article class="mode-card listening-card">
+              <div class="mode-card-header"><span class="mode-tag">02 · LISTENING</span><span class="mode-symbol">◖</span></div>
+              <h3>聽力<br /><span>Listening</span></h3>
+              <p>Belum ada paket listening dalam unggahan ini. Impor bank JSON dan audio Anda melalui menu Bank soal & audio.</p>
+              <div class="mode-card-footer"><span><strong id="listening-card-count">0</strong> questions</span><a href="#bank">Impor materi →</a></div>
+            </article>
+          </div>
+
+          <div class="dashboard-lower-grid">
+            <section class="recent-panel panel-card">
+              <div class="panel-heading"><div><p class="eyebrow">Activity</p><h2>Aktivitas terakhir</h2></div><a href="#progress">Semua <span>↗</span></a></div>
+              <div id="recent-activity" class="activity-list"></div>
+            </section>
+            <section class="tip-panel panel-card">
+              <span class="tip-kicker">STUDY NOTE 01</span>
+              <div class="tip-quote">Periksa jawaban.<br />Ulangi yang sulit.</div>
+              <p>Setelah mengirim sesi, lihat jawaban benar, hasil per bagian, dan nomor yang perlu diulang. Kunci mengikuti PDF jawaban Anda.</p>
+              <div class="tip-footer"><span class="tip-dot"></span> Daily reminder</div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page-view" id="view-mocks" data-view="mocks">
+          <div class="library-header"><div><p class="eyebrow">Koleksi Anda · 250 soal</p><h1>Mock Test <em>Band A</em></h1><p>Lima paket lengkap dari PDF Anda. Nomor, gambar, teks, dan susunan bagian mengikuti sumber.</p></div><div class="library-stat"><span>5</span><small>paket reading</small></div></div>
+          <div class="collection-note"><strong>Belajar sesuai ritme Anda.</strong> Satu paket berisi 50 soal. Mode paket mempertahankan urutan asli. Durasi awal 60 menit dapat Anda ubah. Skor tampil sebagai jumlah benar dan persentase.</div>
+          <div id="mock-library" class="exam-grid"></div>
+        </section>
+
+        <section class="page-view" id="view-reading" data-view="reading">
+          <div class="library-header">
+            <div><p class="eyebrow">Practice library</p><h1>Reading <em>Lab</em></h1><p>Cari soal tertentu atau filter berdasarkan paket dan bagian. Gunakan menu Mock Test untuk mengerjakan paket lengkap.</p></div>
+            <div class="library-stat"><span id="reading-library-total">0</span><small>tersedia</small></div>
+          </div>
+          <div class="filter-bar"><div class="filter-group" id="reading-filters"><button class="filter-button active" data-filter="all">Semua</button><button class="filter-button" data-filter="Band A">Band A</button><button class="filter-button" data-filter="A1">A1</button><button class="filter-button" data-filter="A2">A2</button><button class="filter-button" data-filter="B1">B1</button><button class="filter-button" data-filter="B2">B2</button></div><label class="search-box"><span>⌕</span><input id="reading-search" type="search" placeholder="Cari topik atau kata kunci" /></label></div>
+          <div class="bank-filter-row"><label>Paket<select id="reading-exam-filter"><option value="all">Semua paket</option></select></label><label>Bagian<select id="reading-section-filter"><option value="all">Semua bagian</option><option value="1">1 · Pemahaman kalimat</option><option value="2">2 · Deskripsi gambar</option><option value="3">3 · Melengkapi kalimat</option><option value="4">4 · Melengkapi paragraf</option><option value="5">5 · Pemahaman bacaan</option></select></label></div><div id="reading-library" class="question-library"></div><div id="reading-pagination" class="pagination"></div>
+        </section>
+
+        <section class="page-view" id="view-listening" data-view="listening">
+          <div class="library-header">
+            <div><p class="eyebrow">Practice library</p><h1>Listening <em>Lab</em></h1><p>Dengarkan audio berulang kali saat belajar; kunci jawaban baru muncul setelah Anda mengirimkan sesi.</p></div>
+            <div class="library-stat"><span id="listening-library-total">0</span><small>tersedia</small></div>
+          </div>
+          <div class="filter-bar"><div class="filter-group" id="listening-filters"><button class="filter-button active" data-filter="all">Semua</button><button class="filter-button" data-filter="Band A">Band A</button><button class="filter-button" data-filter="A1">A1</button><button class="filter-button" data-filter="A2">A2</button><button class="filter-button" data-filter="B1">B1</button><button class="filter-button" data-filter="B2">B2</button></div><label class="search-box"><span>⌕</span><input id="listening-search" type="search" placeholder="Cari topik atau kata kunci" /></label></div>
+          <div id="listening-library" class="question-library"></div>
+        </section>
+
+        <section class="page-view" id="view-progress" data-view="progress">
+          <div class="library-header"><div><p class="eyebrow">Your learning loop</p><h1>Progress <em>overview</em></h1><p>Gunakan data ini untuk memilih fokus sesi berikutnya.</p></div><button class="secondary-button" type="button" id="progress-reset-button">Reset progres</button></div>
+          <div id="progress-summary" class="progress-summary"></div>
+          <div class="progress-panel panel-card"><div class="panel-heading"><div><p class="eyebrow">Session history</p><h2>Riwayat latihan</h2></div></div><div id="progress-history" class="history-table-wrap"></div></div>
+        </section>
+
+        <section class="page-view" id="view-guide" data-view="guide">
+          <div class="library-header"><div><p class="eyebrow">Start here</p><h1>Quick <em>guide</em></h1><p>Mulai dari satu paket, pelajari hasilnya, lalu ulangi soal yang perlu dilatih.</p></div></div>
+          <div class="guide-grid">
+            <article class="guide-card"><span class="guide-number">01</span><h2>Pilih paket atau bagian</h2><p>Buka Mock Test Band A untuk 50 soal lengkap. Anda juga bisa memilih satu bagian atau mencari satu soal melalui Reading Lab.</p></article>
+            <article class="guide-card"><span class="guide-number">02</span><h2>Masukkan audio</h2><p>Simpan file MP3 atau WAV ke folder <code>audio/</code>, lalu isi nilai <code>audio</code> pada soal listening dengan path relatif seperti <code>audio/lesson-01.mp3</code>.</p></article>
+            <article class="guide-card"><span class="guide-number">03</span><h2>Buka dan mulai latihan</h2><p>Ekstrak semua isi ZIP ke satu folder, lalu buka <code>index.html</code>. Data bawaan tersedia untuk penggunaan langsung. Petunjuk mengedit JSON ada di <code>panduan.txt</code>.</p></article>
+            <article class="guide-card"><span class="guide-number">04</span><h2>Periksa hasil Anda</h2><p>Kunci mengikuti PDF jawaban yang Anda berikan. PDF tersebut tidak memuat pembahasan rinci. Gunakan tombol ulangi soal salah atau kosong untuk berlatih lagi.</p></article>
+          </div>
+          <div class="schema-note panel-card"><div><p class="eyebrow">Content checklist</p><h2>Perhatikan jenis soal sebelum menjawab.</h2></div><ul><li>Bagian 1: pilih gambar sesuai kalimat. Bagian 2: pilih kalimat sesuai gambar.</li><li>Bagian 3: lengkapi kalimat berdasarkan gambar. Bagian 4: satu opsi hanya boleh digunakan sekali dalam satu paragraf.</li><li>Bagian 5: baca teks dan pilih jawaban. Nomor 36–40 pada paket 3 dan 4 termasuk bagian 4.</li></ul></div>
+        </section>
+
+        <section class="page-view" id="view-bank" data-view="bank">
+          <div class="library-header"><div><p class="eyebrow">Content workspace</p><h1>Bank soal <em>&amp; audio</em></h1><p>Impor JSON yang sudah Anda siapkan, lalu hubungkan rekaman listening. Semua pemrosesan berlangsung di perangkat ini.</p></div></div>
+          <div class="guide-grid">
+            <article class="guide-card"><span class="guide-number">01 · SOAL</span><h2>Impor bank JSON</h2><p>Satu file untuk Reading dan satu untuk Listening. Impor mengganti bank untuk keterampilan yang sama; file sumber di komputer tidak diubah.</p><label class="primary-button file-label" for="bank-input">Pilih file JSON</label><input id="bank-input" type="file" accept=".json,application/json" multiple class="file-input" /><p id="bank-message" class="import-message" role="status"></p></article>
+            <article class="guide-card"><span class="guide-number">02 · AUDIO</span><h2>Hubungkan rekaman</h2><p>Pilih MP3, WAV, M4A, OGG, atau WebM. Nama file harus sama dengan nama pada nilai <code>audio</code> di JSON. Pilihan audio aktif selama tab ini terbuka.</p><label class="primary-button file-label" for="audio-input">Pilih file audio</label><input id="audio-input" type="file" accept=".mp3,.wav,.m4a,.ogg,.webm,audio/*" multiple class="file-input" /><p id="audio-message" class="import-message" role="status">Belum ada audio lokal terhubung.</p></article>
+          </div>
+          <section class="panel-card"><div class="panel-heading"><div><p class="eyebrow">Active question bank</p><h2>Konten saat ini</h2></div></div><div id="bank-summary"></div><div class="bank-actions"><button class="secondary-button" data-export-bank="reading">Ekspor Reading</button><button class="secondary-button" data-export-bank="listening">Ekspor Listening</button><button class="secondary-button" id="restore-banks">Gunakan JSON bawaan</button></div></section>
+          <div class="beta-note"><strong>Materi dari PDF Anda.</strong> Bank bawaan berisi 250 soal reading dan kunci dari lima paket. Materi listening belum disertakan. Skor adalah persentase jawaban benar, bukan konversi skor atau prediksi kelulusan TOCFL.</div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="quiz-modal" aria-hidden="true">
+      <section class="quiz-modal" role="dialog" aria-modal="true" aria-labelledby="quiz-title">
+        <header class="quiz-header"><div><span class="quiz-type" id="quiz-type">READING</span><h2 id="quiz-title">Practice session</h2></div><div class="quiz-header-actions"><span class="quiz-timer" id="quiz-timer">00:00</span><button class="close-button" id="close-quiz" type="button" aria-label="Tutup sesi">×</button></div></header>
+        <div class="quiz-progress"><span id="quiz-progress-fill"></span></div>
+        <div class="quiz-body"><div class="quiz-meta"><span id="quiz-counter">Question 1 of 1</span><button class="text-button" id="toggle-timer" type="button">Jeda</button></div><div id="quiz-jump" class="quiz-jump" aria-label="Navigasi soal"></div><div id="quiz-tools" class="quiz-tools"></div><div id="quiz-content"></div></div>
+        <footer class="quiz-footer"><button class="secondary-button" id="previous-question" type="button">← Sebelumnya</button><div class="quiz-footer-right"><button class="secondary-button" id="next-question" type="button">Berikutnya →</button><button class="primary-button" id="submit-quiz" type="button">Kirim jawaban</button></div></footer>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="setup-modal" aria-hidden="true">
+      <section class="settings-modal setup-modal" role="dialog" aria-modal="true" aria-labelledby="setup-title"><div class="modal-heading"><div><p class="eyebrow">Siapkan ritme belajar</p><h2 id="setup-title">Pengaturan sesi</h2></div><button class="close-button" id="close-setup" type="button" aria-label="Tutup pengaturan">×</button></div><form id="setup-form"><label class="field-label" for="session-level">Level soal</label><select id="session-level" class="select-field"><option value="all">Semua level</option><option>Band A</option><option>A1</option><option>A2</option><option>B1</option><option>B2</option><option>C1</option><option>C2</option></select><div class="setup-grid"><div><label class="field-label" for="session-count">Jumlah soal</label><input id="session-count" class="select-field" type="number" min="1" max="1000" value="10" required /></div><div><label class="field-label" for="session-minutes">Batas waktu (menit)</label><input id="session-minutes" class="select-field" type="number" min="1" max="240" value="15" required /></div></div><label class="check-field"><input id="session-timed" type="checkbox" /> Gunakan batas waktu</label><label class="check-field"><input id="session-shuffle" type="checkbox" checked /> Acak urutan soal</label><p id="setup-availability" class="import-message" role="status"></p><p class="small-note">Waktu adalah pengaturan latihan Anda. Soal tanpa path audio hanya ditampilkan di bank soal.</p><button class="primary-button full-width" id="begin-session" type="submit">Mulai latihan →</button></form></section>
+    </div>
+
+    <div class="modal-backdrop" id="settings-modal" aria-hidden="true">
+      <section class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title"><div class="modal-heading"><div><p class="eyebrow">Personalize</p><h2 id="settings-title">Target belajar</h2></div><button class="close-button" id="close-settings" type="button" aria-label="Tutup">×</button></div><label class="field-label" for="target-level-select">Target level</label><select id="target-level-select" class="select-field"><option value="TOCFL Band A">TOCFL Band A</option><option value="TOCFL Band B">TOCFL Band B</option><option value="TOCFL Band C">TOCFL Band C</option></select><button class="primary-button full-width" id="save-settings" type="button">Simpan target</button></section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="data/banks.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>

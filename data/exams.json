@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "exams": [
+    {
+      "id": "band-a-1",
+      "title": "Mock Test 1",
+      "band": "Band A",
+      "skill": "reading",
+      "questionCount": 50,
+      "defaultMinutes": 60,
+      "durationNote": "Default latihan: 60 menit. Timer dapat diubah sebelum mulai.",
+      "sourcePdf": "sources/mock-test-1.pdf",
+      "answerPdf": "sources/mock-test-1-answers.pdf",
+      "sourceFileName": "1. TOCFL Reading Band A.pdf",
+      "answerFileName": "1. TOCFL Reading Answer Band A.pdf",
+      "sections": [
+        {
+          "number": 1,
+          "title": "Pemahaman kalimat",
+          "titleZh": "單句理解",
+          "start": 1,
+          "end": 15,
+          "questionCount": 15,
+          "instruction": "Baca kalimat, lalu pilih gambar A, B, atau C yang sesuai."
+        },
+        {
+          "number": 2,
+          "title": "Deskripsi gambar",
+          "titleZh": "看圖釋義",
+          "start": 16,
+          "end": 30,
+          "questionCount": 15,
+          "instruction": "Perhatikan gambar, lalu pilih kalimat yang paling sesuai."
+        },
+        {
+          "number": 3,
+          "title": "Melengkapi kalimat",
+          "titleZh": "選詞填空",
+          "start": 31,
+          "end": 40,
+          "questionCount": 10,
+          "instruction": "Perhatikan gambar untuk kelompok soal ini, lalu lengkapi setiap kalimat."
+        },
+        {
+          "number": 4,
+          "title": "Melengkapi paragraf",
+          "titleZh": "完成段落",
+          "start": 41,
+          "end": 45,
+          "questionCount": 5,
+          "instruction": "Lengkapi lima bagian kosong dalam satu paragraf. Setiap pilihan hanya boleh digunakan satu kali dalam kelompok yang sama."
+        },
+        {
+          "number": 5,
+          "title": "Pemahaman bacaan",
+          "titleZh": "閱讀理解",
+          "start": 46,
+          "end": 50,
+          "questionCount": 5,
+          "instruction": "Baca teks, lalu pilih jawaban yang sesuai dengan isinya."
+        }
+      ]
+    },
+    {
+      "id": "band-a-2",
+      "title": "Mock Test 2",
+      "band": "Band A",
+      "skill": "reading",
+      "questionCount": 50,
+      "defaultMinutes": 60,
+      "durationNote": "Default latihan: 60 menit. Timer dapat diubah sebelum mulai.",
+      "sourcePdf": "sources/mock-test-2.pdf",
+      "answerPdf": "sources/mock-test-2-answers.pdf",
+      "sourceFileName": "2. TOCFL Reading Band A.pdf",
+      "answerFileName": "2. TOCFL Reading Answer Band A.pdf",
+      "sections": [
+        {
+          "number": 1,
+          "title": "Pemahaman kalimat",
+          "titleZh": "單句理解",
+          "start": 1,
+          "end": 15,
+          "questionCount": 15,
+          "instruction": "Baca kalimat, lalu pilih gambar A, B, atau C yang sesuai."
+        },
+        {
+          "number": 2,
+          "title": "Deskripsi gambar",
+          "titleZh": "看圖釋義",
+          "start": 16,
+          "end": 30,
+          "questionCount": 15,
+          "instruction": "Perhatikan gambar, lalu pilih kalimat yang paling sesuai."
+        },
+        {
+          "number": 3,
+          "title": "Melengkapi kalimat",
+          "titleZh": "選詞填空",
+          "start": 31,
+          "end": 40,
+          "questionCount": 10,
+          "instruction": "Perhatikan gambar untuk kelompok soal ini, lalu lengkapi setiap kalimat."
+        },
+        {
+          "number": 4,
+          "title": "Melengkapi paragraf",
+          "titleZh": "完成段落",
+          "start": 41,
+          "end": 45,
+          "questionCount": 5,
+          "instruction": "Lengkapi lima bagian kosong dalam satu paragraf. Setiap pilihan hanya boleh digunakan satu kali dalam kelompok yang sama."
+        },
+        {
+          "number": 5,
+          "title": "Pemahaman bacaan",
+          "titleZh": "閱讀理解",
+          "start": 46,
+          "end": 50,
+          "questionCount": 5,
+          "instruction": "Baca teks, lalu pilih jawaban yang sesuai dengan isinya."
+        }
+      ]
+    },
+    {
+      "id": "band-a-3",
+      "title": "Mock Test 3",
+      "band": "Band A",
+      "skill": "reading",
+      "questionCount": 50,
+      "defaultMinutes": 60,
+      "durationNote": "Default latihan: 60 menit. Timer dapat diubah sebelum mulai.",
+      "sourcePdf": "sources/mock-test-3.pdf",
+      "answerPdf": "sources/mock-test-3-answers.pdf",
+      "sourceFileName": "3. TOCFL Reading Band A.pdf",
+      "answerFileName": "3. TOCFL Reading Answer Band A.pdf",
+      "sections": [
+        {
+          "number": 1,
+          "title": "Pemahaman kalimat",
+          "titleZh": "單句理解",
+          "start": 1,
+          "end": 15,
+          "questionCount": 15,
+          "instruction": "Baca kalimat, lalu pilih gambar A, B, atau C yang sesuai."
+        },
+        {
+          "number": 2,
+          "title": "Deskripsi gambar",
+          "titleZh": "看圖釋義",
+          "start": 16,
+          "end": 30,
+          "questionCount": 15,
+          "instruction": "Perhatikan gambar, lalu pilih kalimat yang paling sesuai."
+        },
+        {
+          "number": 3,
+          "title": "Melengkapi kalimat",
+          "titleZh": "選詞填空",
+          "start": 31,
+          "end": 35,
+          "questionCount": 5,
+          "instruction": "Perhatikan gambar untuk kelompok soal ini, lalu lengkapi setiap kalimat."
+        },
+        {
+          "number": 4,
+          "title": "Melengkapi paragraf",
+          "titleZh": "完成段落",
+          "start": 36,
+          "end": 45,
+          "questionCount": 10,
+          "instruction": "Lengkapi lima bagian kosong dalam satu paragraf. Setiap pilihan hanya boleh digunakan satu kali dalam kelompok yang sama."
+        },
+        {
+          "number": 5,
+          "title": "Pemahaman bacaan",
+          "titleZh": "閱讀理解",
+          "start": 46,
+          "end": 50,
+          "questionCount": 5,
+          "instruction": "Baca teks, lalu pilih jawaban yang sesuai dengan isinya."
+        }
+      ]
+    },
+    {
+      "id": "band-a-4",
+      "title": "Mock Test 4",
+      "band": "Band A",
+      "skill": "reading",
+      "questionCount": 50,
+      "defaultMinutes": 60,
+      "durationNote": "Default latihan: 60 menit. Timer dapat diubah sebelum mulai.",
+      "sourcePdf": "sources/mock-test-4.pdf",
+      "answerPdf": "sources/mock-test-4-answers.pdf",
+      "sourceFileName": "4. TOCFL Reading Band A.pdf",
+      "answerFileName": "4. TOCFL Reading Answer Band A.pdf",
+      "sections": [
+        {
+          "number": 1,
+          "title": "Pemahaman kalimat",
+          "titleZh": "單句理解",
+          "start": 1,
+          "end": 15,
+          "questionCount": 15,
+          "instruction": "Baca kalimat, lalu pilih gambar A, B, atau C yang sesuai."
+        },
+        {
+          "number": 2,
+          "title": "Deskripsi gambar",
+          "titleZh": "看圖釋義",
+          "start": 16,
+          "end": 30,
+          "questionCount": 15,
+          "instruction": "Perhatikan gambar, lalu pilih kalimat yang paling sesuai."
+        },
+        {
+          "number": 3,
+          "title": "Melengkapi kalimat",
+          "titleZh": "選詞填空",
+          "start": 31,
+          "end": 35,
+          "questionCount": 5,
+          "instruction": "Perhatikan gambar untuk kelompok soal ini, lalu lengkapi setiap kalimat."
+        },
+        {
+          "number": 4,
+          "title": "Melengkapi paragraf",
+          "titleZh": "完成段落",
+          "start": 36,
+          "end": 45,
+          "questionCount": 10,
+          "instruction": "Lengkapi lima bagian kosong dalam satu paragraf. Setiap pilihan hanya boleh digunakan satu kali dalam kelompok yang sama."
+        },
+        {
+          "number": 5,
+          "title": "Pemahaman bacaan",
+          "titleZh": "閱讀理解",
+          "start": 46,
+          "end": 50,
+          "questionCount": 5,
+          "instruction": "Baca teks, lalu pilih jawaban yang sesuai dengan isinya."
+        }
+      ]
+    },
+    {
+      "id": "band-a-5",
+      "title": "Mock Test 5",
+      "band": "Band A",
+      "skill": "reading",
+      "questionCount": 50,
+      "defaultMinutes": 60,
+      "durationNote": "Default latihan: 60 menit. Timer dapat diubah sebelum mulai.",
+      "sourcePdf": "sources/mock-test-5.pdf",
+      "answerPdf": "sources/mock-test-5-answers.pdf",
+      "sourceFileName": "5. TOCFL Reading Band A.pdf",
+      "answerFileName": "5. TOCFL Reading Answer Band A.pdf",
+      "sections": [
+        {
+          "number": 1,
+          "title": "Pemahaman kalimat",
+          "titleZh": "單句理解",
+          "start": 1,
+          "end": 15,
+          "questionCount": 15,
+          "instruction": "Baca kalimat, lalu pilih gambar A, B, atau C yang sesuai."
+        },
+        {
+          "number": 2,
+          "title": "Deskripsi gambar",
+          "titleZh": "看圖釋義",
+          "start": 16,
+          "end": 30,
+          "questionCount": 15,
+          "instruction": "Perhatikan gambar, lalu pilih kalimat yang paling sesuai."
+        },
+        {
+          "number": 3,
+          "title": "Melengkapi kalimat",
+          "titleZh": "選詞填空",
+          "start": 31,
+          "end": 40,
+          "questionCount": 10,
+          "instruction": "Perhatikan gambar untuk kelompok soal ini, lalu lengkapi setiap kalimat."
+        },
+        {
+          "number": 4,
+          "title": "Melengkapi paragraf",
+          "titleZh": "完成段落",
+          "start": 41,
+          "end": 45,
+          "questionCount": 5,
+          "instruction": "Lengkapi lima bagian kosong dalam satu paragraf. Setiap pilihan hanya boleh digunakan satu kali dalam kelompok yang sama."
+        },
+        {
+          "number": 5,
+          "title": "Pemahaman bacaan",
+          "titleZh": "閱讀理解",
+          "start": 46,
+          "end": 50,
+          "questionCount": 5,
+          "instruction": "Baca teks, lalu pilih jawaban yang sesuai dengan isinya."
+        }
+      ]
+    }
+  ]
+}

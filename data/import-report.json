@@ -1,0 +1,32 @@
+{
+  "questionCount": 250,
+  "examCount": 5,
+  "questionsPerExam": 50,
+  "assetCount": 230,
+  "clozeGroupCount": 7,
+  "allImagesDecoded": true,
+  "allAnswersVerifiedAgainstPdfCoordinates": true,
+  "allSourcePdfCopiesHashMatched": true,
+  "visuallyReviewedContactSheets": 5,
+  "textCorrections": [
+    {
+      "questionId": "a2-q50",
+      "option": "B",
+      "from": "必頇像他一樣努力才行",
+      "to": "必須像他一樣努力才行",
+      "reason": "PDF font character map mismatch; corrected against visible source glyph."
+    }
+  ],
+  "applicationChecks": {
+    "method": "Node.js VM with minimal DOM; not browser rendering",
+    "answerKeysIndependentlyTranscribed": true,
+    "allFiveExamsPerfectScore": true,
+    "partialScoreBlankAnswersRetry": true,
+    "clozeUniqueOptionsAcrossGroups": true,
+    "pauseClearFlagTimer": true,
+    "offlineAndHttpDataLoading": true,
+    "legacyBankCompatibility": true,
+    "metadataPreservedOnImportExport": true,
+    "browserVisualQA": false
+  }
+}
